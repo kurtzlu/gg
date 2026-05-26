@@ -24,10 +24,21 @@ npm start
 # http://localhost:3000
 ```
 
-## 部署
-任何支援 Node 18+ 的服務都可以（Render / Railway / Fly.io / 自架 VPS）。
+## 一鍵部署到 Render（手機也能用）
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/kurtzlu/gg)
+
+點上面的按鈕 → 用 GitHub 登入 Render → 看到 Blueprint 預覽 → 點 **Apply** → 等 1–2 分鐘，
+拿到 `https://heshin-lottery-XXXX.onrender.com` 這種網址，貼給朋友。
+
+> ⚠️ Render 免費方案 15 分鐘無人訪問會休眠，重啟後 `data.json` 會重置。
+> 6 個人請集中在同一個時段內抽完（半小時內），就沒問題。
+> 若要永久保存，可在 Render 加付費 disk 或改用 Upstash Redis（README 末端說明）。
+
+## 其他部署方式
+任何支援 Node 18+ 的服務都可以（Railway / Fly.io / 自架 VPS）。
 - 監聽 `PORT` 環境變數
-- 狀態持久化於 `data.json`（部署平台需提供 persistent volume；單機 / 短期使用沒問題）
+- 狀態持久化於 `data.json`
 - 若部署在反向代理後方，已啟用 `trust proxy` 以取得真實 IP
 
 ## 重抽（管理員）
