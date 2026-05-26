@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>合晶 6182 抽籤 — 朋友限定</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>● 合晶 6182 +0.00%</span>
+      <span>● 台積電 2330 +0.50%</span>
+      <span>● 鴻海 2317 -0.20%</span>
+      <span>● 聯發科 2454 +1.10%</span>
+      <span>● 群創 3481 +0.00%</span>
+      <span>● 友達 2409 -0.40%</span>
+      <span>● 中華電 2412 +0.10%</span>
+      <span>● 合晶 6182 +0.00%</span>
+      <span>● 台積電 2330 +0.50%</span>
+      <span>● 鴻海 2317 -0.20%</span>
+      <span>● 聯發科 2454 +1.10%</span>
+      <span>● 群創 3481 +0.00%</span>
+      <span>● 友達 2409 -0.40%</span>
+      <span>● 中華電 2412 +0.10%</span>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">證</div>
+      <div>
+        <div class="brand-title">朋友限定 · 股票抽籤系統</div>
+        <div class="brand-sub">Friends Private Lottery</div>
+      </div>
+    </div>
+    <div class="status-chip" id="topStatus">— 載入中 —</div>
+  </header>
+
+  <main class="container">
+    <!-- Stock info card -->
+    <section class="stock-card">
+      <div class="stock-left">
+        <div class="stock-code">6182</div>
+        <div class="stock-name">合 晶</div>
+        <div class="stock-tags">
+          <span class="tag">上市</span>
+          <span class="tag">半導體</span>
+          <span class="tag">矽晶圓</span>
+        </div>
+      </div>
+      <div class="stock-mid">
+        <div class="info-row"><span>抽籤張數</span><strong>1 張 (1,000 股)</strong></div>
+        <div class="info-row"><span>抽籤資格</span><strong>群內 6 位限定</strong></div>
+        <div class="info-row"><span>中籤機率</span><strong id="oddsCell">1 / 6 ≈ 16.67%</strong></div>
+        <div class="info-row"><span>抽籤狀態</span><strong id="lotteryStatus" class="red">受理中</strong></div>
+      </div>
+      <div class="stock-right">
+        <div class="badge">朋</div>
+        <div class="badge-sub">友情價</div>
+      </div>
+    </section>
+
+    <!-- LOGIN SCREEN -->
+    <section id="loginScreen" class="screen">
+      <div class="panel">
+        <h2 class="panel-title">📝 申購登記</h2>
+        <p class="muted">請輸入您的名字（限定名單）：Aki / Queenie / Jimmy / Stanley / Even / Chris</p>
+        <div class="login-form">
+          <input id="nameInput" type="text" placeholder="輸入您的名字..." autocomplete="off" />
+          <button id="loginBtn">登入申購</button>
+        </div>
+        <div id="loginError" class="error-msg"></div>
+        <div class="quick-names" id="quickNames"></div>
+      </div>
+    </section>
+
+    <!-- LOTTERY SCREEN -->
+    <section id="lotteryScreen" class="screen hidden">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 class="panel-title">🎴 請選一張籤 — <span id="hiName" class="gold"></span></h2>
+          <div class="hint">點選任一張籤即完成申購（無法更改）</div>
+        </div>
+        <div id="cardGrid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <!-- WAITING SCREEN -->
+    <section id="waitingScreen" class="screen hidden">
+      <div class="panel waiting-panel">
+        <div class="big-icon">⏳</div>
+        <h2>申購完成，等待開獎中…</h2>
+        <p class="muted">您抽到第 <span id="myCardNum" class="gold"></span> 號籤。所有人抽完後自動開獎。</p>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+          <div id="progressText" class="progress-text">0 / 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVEAL SCREEN -->
+    <section id="revealScreen" class="screen hidden">
+      <div class="reveal-panel">
+        <div class="reveal-banner">🎉 開 獎 結 果 🎉</div>
+        <div class="winner-line">
+          中籤者：<span id="winnerName" class="winner-name"></span>
+        </div>
+        <div class="winner-stock">恭喜獲得 <strong>合晶 6182</strong> 一張</div>
+        <div id="resultsGrid" class="results-grid"></div>
+      </div>
+    </section>
+
+    <!-- STATUS PANEL (always visible) -->
+    <section class="status-panel">
+      <h3>📋 申購名單狀態</h3>
+      <ul id="statusList" class="status-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>本網站僅供朋友群內娛樂使用，非實際證券服務。每個 IP 限抽一次。</small>
+  </footer>
+
+  <div id="confetti" class="confetti-layer"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

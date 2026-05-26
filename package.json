@@ -1,0 +1,15 @@
+{
+  "name": "taiwan-stock-lottery",
+  "version": "1.0.0",
+  "description": "合晶 (6182) 抽籤網站 — 朋友群內抽一張",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
